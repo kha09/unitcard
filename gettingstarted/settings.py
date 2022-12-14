@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "unitcard",
+    'storages',
 
 ]
 
@@ -121,5 +122,25 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'file')
+MEDIA_URL = '//file/'
+
+# AWS_ACCESS_KEY_ID = 'AKIA37SVVXBHZ7GPV3UJ'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'cloud-cube-us2'
+# AWS_S3_CUSTOM_DOMAIN = 'https://cloud-cube-us2.s3.amazonaws.com/u5bi663c72u6'
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
+#
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'mysite/static'),
+# ]
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'mysite.storage_backends.MediaStorage'  # <-- here is where we reference it
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # <-- here is where we reference it
 
 django_heroku.settings(locals())

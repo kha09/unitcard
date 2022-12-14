@@ -13,6 +13,10 @@ class Card(models.Model):
 
     phone = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
     email = models.EmailField(max_length=255, blank=True)
-
+    vcard = models.FileField(upload_to = 'card/')
     def __str__(self):
         return self.first_name
+
+
+class Vcard(models.Model):
+    filecard = models.FileField(upload_to = 'card/')

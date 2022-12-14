@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Django Card List</h1>
+<ul>
+  {% for card in cards %}
+    <h2>test</h2>
+    <li><a download href="{{card.filecard.url}}">card</a></li>
+<!--    <li>file.file</li>-->
+  {% endfor %}
+</ul>
+</body>
+</html>
