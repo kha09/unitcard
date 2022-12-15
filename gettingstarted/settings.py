@@ -123,8 +123,12 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'file')
-MEDIA_URL = '//file/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'file')
+# MEDIA_URL = '//file/'
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'file')
+MEDIA_URL = '/file/'
+
 
 # AWS_ACCESS_KEY_ID = 'AKIA37SVVXBHZ7GPV3UJ'
 # AWS_SECRET_ACCESS_KEY = '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'
