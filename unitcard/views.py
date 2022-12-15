@@ -94,4 +94,4 @@ def card(request):
     data = {
         'cards':cards,
     }
-    return render(request, 'card.html', data)
+    return render(request, 'newcard.html', data)

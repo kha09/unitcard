@@ -1,0 +1,40 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>newcard</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+</head>
+
+<body>
+    <div class="row" style="margin-top: 50px;">
+       {% for card in cards %}
+        <div class="col">
+            <h5>{{card.filecard.name|cut:'card/'}}</h5>
+        </div>
+
+       <div class="col"><a style="margin-right: 10px" download href="{{card.filecard.url}}" class="fas fa-file-download"></a>
+           <a style="margin-right: 10px" href="{{card.filecard.url}}" class="fas fa-link"></a>
+           <a style="margin-right: 10px" href="{{card.filecard.url}}" class="fas fa-barcode"></a>
+{#       </div>#}
+{#        <div class="col"><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-barcode"></i></button><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-link"></i></button><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-file-download"></i></button></div>#}
+{#    </div>#}
+      {% endfor %}
+
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>
+
+{{card.filecard.filename|cut:'remove/trailing/dirs/'}}
+{# {% for card in cards %}#}
+{#    <h2>test</h2>#}
+{#    <li><a download href="{{card.filecard.url}}">card</a></li>#}
+{#<!--    <li>file.file</li>-->#}
+{#  {% endfor %}#}
