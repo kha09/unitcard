@@ -75,7 +75,8 @@ def make_vcard(
         company,
         title,
         phone,
-        email):
+        email,
+        website):
     return [
         'BEGIN:VCARD',
         'VERSION:2.1',
@@ -85,6 +86,7 @@ def make_vcard(
         f'TITLE:{title}',
         f'EMAIL;PREF;INTERNET:{email}',
         f'TEL;WORK;VOICE:{phone}',
+        f'WEB;WEBSITE:{website}',
         f'REV:1',
         'END:VCARD'
     ]
