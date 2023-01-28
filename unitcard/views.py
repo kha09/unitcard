@@ -86,7 +86,7 @@ def make_vcard(
         f'TITLE:{title}',
         f'EMAIL;PREF;INTERNET:{email}',
         f'TEL;WORK;VOICE:{phone}',
-        f'WEB;WEBSITE:{website}',
+        f'URL;WEB;WEBSITE:{website}',
         f'REV:1',
         'END:VCARD'
     ]
