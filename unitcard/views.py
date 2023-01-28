@@ -27,7 +27,7 @@ def home(request):
             vcf_card = f'{first_name.lower()}.png'
 
             vcf_name = first_name.lower()
-            vcard = make_vcard(first_name, last_name, company, title, phone, email)
+            vcard = make_vcard(first_name, last_name, company, title, phone, email, website)
             # write_vcard(vcf_file, vcard)
             f = open(vcf_file, 'w')
             f.writelines([l + '\n' for l in vcard])
