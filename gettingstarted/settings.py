@@ -28,7 +28,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://web-production-c9e0.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-c9e0.up.railway.app']
 
 # Application definition
 
