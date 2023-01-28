@@ -5,8 +5,10 @@ from django.core.files.storage import default_storage
 from django.core.files import File
 import os
 from django.views.generic import ListView
+import qrcode
 
-
+urlcard =''
+path1 = ''
 def home(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
@@ -21,6 +23,8 @@ def home(request):
 
         else:
             vcf_file = f'{first_name.lower()}.vcf'
+            vcf_card = f'{first_name.lower()}.png'
+
             vcf_name = first_name.lower()
             vcard = make_vcard(first_name, last_name, company, title, phone, email)
             # write_vcard(vcf_file, vcard)
@@ -37,27 +41,26 @@ def home(request):
                     my_file = File(file=existing_file, name= vcf_file)
                     card = Vcard(filecard= my_file)
                     card.save()
+                    urlcard = card.filecard.url
+                    path1 = card.filecard.name
 
 
-                # django_image_file = File(file=existing_file, name='filename.jpeg')
-                # post = Post(image=django_image_file)
-                # post.full_clean()
-                # post.save()
+            input_data = urlcard
 
+            qr = qrcode.QRCode(
+                version=1,
+                box_size=10,
+                border=5)
+            qr.add_data(input_data)
+            qr.make(fit=True)
+            img = qr.make_image(fill='black', back_color='white')
+            img.save(vcf_card)
+            with open(vcf_card, 'rb') as existing_file:
+                    my_file = File(file=existing_file, name= vcf_card)
+                    card = Vcard.objects.get(filecard= path1)
+                    card.imgcard = my_file
+                    card.save()
 
-                # vcard = Vcard
-                # vcard.filecard.save(vcf_file, existing_file, save=False)
-                # vcard.save()
-
-            # vcf_file = f'{first_name.lower()}.vcf'
-            # vcf_name = first_name.lower()
-            # vcard = make_vcard(first_name, last_name, company, title, phone, email)
-            # write_vcard(vcf_file, vcard)
-            # f = open(vcf_file, 'w')
-            # f.writelines([l + '\n' for l in vcard])
-            # f.close()
-
-            # default_storage.save(vcf_name,vcf_file)
             return redirect('home')
 
 
@@ -91,7 +94,9 @@ def write_vcard(f, vcard):
 
 def card(request):
     cards = Vcard.objects.all()
+    # codes = Scard.objects.all()
     data = {
         'cards':cards,
+        # 'codes':codes,
     }
     return render(request, 'newcard.html', data)
