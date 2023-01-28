@@ -17,6 +17,7 @@ def home(request):
         title = request.POST['title']
         phone = request.POST['phone']
         email = request.POST['email']
+        website = request.POST['website']
 
         if Card.objects.filter(first_name=first_name, last_name=last_name).exists():
             return redirect('home')
@@ -35,6 +36,7 @@ def home(request):
                 first_name=first_name, last_name=last_name,
                 company=company, title=title,
                 phone=phone, email=email,
+                website=website,
 
             )
             with open(vcf_file, 'rb') as existing_file:
