@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>card_detail</title>
+     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+
+</head>
+<body>
+
+<form action="" method ="post">
+    {% csrf_token %}
+    <fieldset>
+        <label>First Name</label>
+        <input name="first_name" class="form-control" type="text"value="{{ single_file.first_name }}" placeholder="{{ single_file.first_name }}">
+
+        <label>Last Name</label>
+        <input name="last_name" class="form-control" type="text"value="{{ single_file.last_name }}" placeholder="{{ single_file.last_name }}">
+
+        <label>Company</label>
+        <input name="company" class="form-control" type="text"value="{{ single_file.company }}" placeholder="{{ single_file.company }}">
+
+        <label>Title</label>
+        <input name="title" class="form-control" type="text"value="{{ single_file.title }}" placeholder="{{ single_file.title }}">
+
+        <label>Phone</label>
+        <input name="phone" class="form-control" type="text"value="{{ single_file.phone }}" placeholder="{{ single_file.phone }}">
+
+        <label>Email</label>
+        <input name="email" class="form-control" type="text"value="{{ single_file.email }}" placeholder="{{ single_file.email }}">
+
+        <label>Website</label>
+        <input name="website" class="form-control" type="text"value="{{ single_file.website }}" placeholder="{{ single_file.website }}">
+
+        <input type="submit" class="btn btn-primary" value="Register">
+
+    </fieldset>
+</form>
+
+</body>
+</html>

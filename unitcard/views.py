@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.core.files.storage import default_storage
 # Create your views here.
@@ -104,3 +104,48 @@ def card(request):
         # 'codes':codes,
     }
     return render(request, 'newcard.html', data)
+
+
+def file_detail(request,id):
+    single_file = get_object_or_404(Card, pk=id)
+    single_card = get_object_or_404(Vcard, pk=id)
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        company = request.POST['company']
+        title = request.POST['title']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        website = request.POST['website']
+
+        # single_card.filecard.delete()
+        #
+        # vcf_file = f'{first_name.lower()}.vcf'
+        # vcf_name = first_name.lower()
+        vcard = make_vcard(first_name, last_name, company, title, phone, email, website)
+        vcf_path = single_card.filecard.path
+        # write_vcard(vcf_file, vcard)
+        f = open(vcf_path, 'w')
+        f.writelines([l + '\n' for l in vcard])
+        f.close()
+        single_file.first_name=first_name
+        single_file.last_name=last_name
+        single_file.company=company
+        single_file.title=title
+        single_file.phone=phone
+        single_file.email=email
+        single_file.website=website
+        single_file.save()
+
+        # with open(vcf_file, 'rb') as existing_file:
+        #     my_file = File(file=existing_file, name=vcf_file)
+        #     single_card.filecard = my_file
+        #     single_card.save()
+
+        return redirect('card')
+
+    data= {
+        'single_file':single_file
+    }
+    return render(request, 'card_detail.html', data)
+

@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:2.1
+N:test;edited02
+FN:edited02 test
+ORG:lolo
+TITLE:webdev
+EMAIL;PREF;INTERNET:dev.khalid.0@gmail.com
+TEL;WORK;VOICE:0536637215
+URL;WEB;WEBSITE:www.google.com
+REV:1
+END:VCARD

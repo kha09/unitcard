@@ -23,7 +23,7 @@
        <div class="col"><a style="margin-right: 10px" download href="{{card.filecard.url}}" class="fas fa-file-download"> card</a>
            <a style="margin-right: 10px" href="{{card.filecard.url}}" class="fas fa-link" onclick="copyURI(event)"> copy card</a>
            <a style="margin-right: 10px" href="{{card.imgcard.url}}" class="fas fa-barcode"> barcode</a>
-
+            <a href="{% url 'file_detail' card.id %}">Edit</a>
 
 {#       </div>#}
 {#        <div class="col"><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-barcode"></i></button><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-link"></i></button><button class="btn" type="button" style="border-style: solid;border-color: rgb(255,255,255);"><i class="fas fa-file-download"></i></button></div>#}

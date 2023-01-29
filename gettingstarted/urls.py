@@ -19,6 +19,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home, name='home'),
     path("card", card, name='card'),
+    path('<int:id>', file_detail, name="file_detail"),
 
 ]
 if settings.DEBUG:  # new
