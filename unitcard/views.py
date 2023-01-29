@@ -43,11 +43,11 @@ def home(request):
                     my_file = File(file=existing_file, name= vcf_file)
                     card = Vcard(filecard= my_file)
                     card.save()
-                    urlcard = card.filecard.path
+                    urlcard = card.filecard.url
                     path1 = card.filecard.name
 
 
-            input_data = urlcard
+            input_data = "https://web-production-c9e0.up.railway.app" + urlcard
 
             qr = qrcode.QRCode(
                 version=1,
