@@ -43,7 +43,7 @@ def home(request):
                     my_file = File(file=existing_file, name= vcf_file)
                     card = Vcard(filecard= my_file)
                     card.save()
-                    urlcard = card.filecard.url
+                    urlcard = card.filecard.path
                     path1 = card.filecard.name
 
 
