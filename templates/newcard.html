@@ -21,7 +21,7 @@
         </div>
 
        <div class="col"><a style="margin-right: 10px" download href="{{card.filecard.url}}" class="fas fa-file-download"> card</a>
-           <a style="margin-right: 10px" href="{{card.filecard.url}}" class="fas fa-link" onclick="copyURI(event)"> copy card</a>
+           <a style="margin-right: 10px" href="https://web-production-c9e0.up.railway.app{{card.filecard.url}}" class="fas fa-link" onclick="copyURI(event)"> copy card</a>
            <a style="margin-right: 10px" href="{{card.imgcard.url}}" class="fas fa-barcode"> barcode</a>
             <a href="{% url 'file_detail' card.id %}">Edit</a>
 
