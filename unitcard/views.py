@@ -66,7 +66,7 @@ def home(request):
             return redirect('home')
 
 
-    return render(request, 'home.html')
+    return render(request, 'home_arabic.html')
 
 
 def make_vcard(
