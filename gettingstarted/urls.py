@@ -18,6 +18,7 @@ admin.autodiscover()
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home, name='home'),
+    path("ar", home_arabic, name='home_arabic'),
     path("card", card, name='card'),
     path('<int:id>', file_detail, name="file_detail"),
 

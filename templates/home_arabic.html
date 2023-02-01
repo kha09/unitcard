@@ -11,32 +11,38 @@
 
 </head>
 <body>
+<div class="container mt-4" style="text-align: left; ">
+    <div class="col-sm">
+        <a href="{% url 'home' %}">English</a>
+    </div>
+</div>
+
 <div class="container mt-4">
-    <form action="{% url 'home' %}" method ="post">
+    <form action="{% url 'home_arabic' %}" method ="post">
         {% csrf_token %}
         <fieldset>
-            <label>First Name</label>
-            <input name="first_name" class="form-control" type="text" placeholder="First Name">
+            <label>الاسم الأول</label>
+            <input name="first_name" class="form-control" type="text" placeholder="الاسم الأول">
 
-            <label>Last Name</label>
-            <input name="last_name" class="form-control" type="text" placeholder="Last Name">
+            <label>الاسم الأخير</label>
+            <input name="last_name" class="form-control" type="text" placeholder="الاسم الأخير">
 
-            <label>Company</label>
-            <input name="company" class="form-control" type="text" placeholder="Company">
+            <label>الشركة</label>
+            <input name="company" class="form-control" type="text" placeholder="الشركة">
 
-            <label>Title</label>
-            <input name="title" class="form-control" type="text" placeholder="title">
+            <label>المسمى الوظيفي</label>
+            <input name="title" class="form-control" type="text" placeholder="المسمى الوظيفي">
 
-            <label>Phone</label>
-            <input name="phone" class="form-control" type="text" placeholder="Phone">
+            <label>رقم الجوال</label>
+            <input name="phone" class="form-control" type="text" placeholder="رقم الجوال">
 
-            <label>Email</label>
-            <input name="email" class="form-control" type="text" placeholder="email">
+            <label>الإيميل</label>
+            <input name="email" class="form-control" type="text" placeholder="الإيميل">
 
-            <label>Website</label>
-            <input name="website" class="form-control" type="text" placeholder="website">
+            <label>رابط التواصل الإجتماعي</label>
+            <input name="website" class="form-control" type="text" placeholder="رابط التواصل الإجتماعي">
 
-            <input type="submit" class="btn btn-primary mt-3" value="Register">
+            <input type="submit" class="btn btn-primary mt-3" value="تسجيل">
 
         </fieldset>
     </form>
