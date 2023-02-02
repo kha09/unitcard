@@ -47,7 +47,7 @@ def home(request):
                     path1 = card.filecard.name
 
 
-            input_data = "https://web-production-c9e0.up.railway.app" + urlcard
+            input_data = urlcard
 
             qr = qrcode.QRCode(
                 version=1,
@@ -187,7 +187,7 @@ def home_arabic(request):
                     path1 = card.filecard.name
 
 
-            input_data = "https://web-production-c9e0.up.railway.app" + urlcard
+            input_data = urlcard
 
             qr = qrcode.QRCode(
                 version=1,
