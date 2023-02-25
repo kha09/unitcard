@@ -3,6 +3,13 @@ from django.core.validators import RegexValidator
 import os
 
 # Create your models here.
+class Vcard(models.Model):
+    filecard = models.FileField(upload_to = 'card/')
+    imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
+    # def filename(self):
+    #     return os.path.basename(self.filecard.name)
+    def __str__(self):
+        return self.filecard.name
 
 class Card(models.Model):
     first_name = models.CharField(max_length=50)
@@ -20,13 +27,7 @@ class Card(models.Model):
         return self.first_name
 
 
-class Vcard(models.Model):
-    filecard = models.FileField(upload_to = 'card/')
-    imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
-    # def filename(self):
-    #     return os.path.basename(self.filecard.name)
-    def __str__(self):
-        return self.filecard.name
+
 
 # class Scard(models.Model):
 #     imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
