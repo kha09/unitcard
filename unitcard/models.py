@@ -24,7 +24,8 @@ class Vcard(models.Model):
     imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
     # def filename(self):
     #     return os.path.basename(self.filecard.name)
-
+    def __str__(self):
+        return self.filecard.name
 
 # class Scard(models.Model):
 #     imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
