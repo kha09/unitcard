@@ -15,6 +15,7 @@ class Card(models.Model):
     phone = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
     email = models.EmailField(max_length=255, blank=True)
     website = models.CharField(max_length=255, blank=True)
+    mcard = models.ForeignKey(Vcard, on_delete=models.CASCADE)
     def __str__(self):
         return self.first_name
 
