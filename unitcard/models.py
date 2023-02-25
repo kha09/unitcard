@@ -22,8 +22,6 @@ class Card(models.Model):
 class Vcard(models.Model):
     filecard = models.FileField(upload_to = 'card/')
     imgcard = models.ImageField(upload_to = 'img/', default='img01.png')
-    mcard = models.ForeignKey(Card, on_delete=models.CASCADE)
-
     # def filename(self):
     #     return os.path.basename(self.filecard.name)
     def __str__(self):
