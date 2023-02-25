@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'VP5q8fBCpmEueW8PYkLz',
+        'PASSWORD': '9PSWz64ltyZ1gbP8Ls4J',
         'HOST': 'containers-us-west-40.railway.app',
         'PORT': '6605',
     }
@@ -155,7 +155,7 @@ MEDIA_URL = '/file/'
 AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.me-south-1.amazonaws.com/"
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.me-south-1.amazonaws.com"
 AWS_S3_ENDPOINT_URL = "https://s3.me-south-1.amazonaws.com"
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
